@@ -8,7 +8,7 @@ const app = express();
 // CORS setup
 app.use(
   cors({
-    origin: "http://127.0.0.1:5500",
+    origin: process.env.CORS_ORIGIN || "http://127.0.0.1:5500",
     credentials: true,
   })
 );
@@ -53,3 +53,4 @@ app.use((err, req, res, next) => {
 });
 
 export { app };
+
